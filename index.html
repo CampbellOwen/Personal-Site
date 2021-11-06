@@ -1,0 +1,175 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+                margin: 0;
+                font-family: 'Roboto Mono', monospace;
+                font-size: large;
+            }
+
+            body > :nth-child(odd) {
+                background-color: #474747;
+                color: #B6B6B6;
+            }
+            
+            body > :nth-child(even) {
+                background-color: #B6B6B6;
+                color: #474747;
+            }
+
+            .splash {
+                background-image: url('bigger.png');
+                background-position: center;
+                background-size: cover;
+                display: flex;
+                flex-direction: row;
+                align-items: space-between;
+                justify-content:space-between;
+                color: #474747;
+            }
+
+            .splash_left {
+                display: flex;
+                flex-direction: column;
+                justify-content:space-evenly;
+                color: #474747;
+                flex-shrink: 1.5;
+
+            }
+            
+            .splash_right {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                color: #474747;
+            }
+
+            .nav {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 40%;
+            }
+
+            .nav_item {
+                font-size: x-large;
+                background-color: #B6B6B6;
+                padding: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .section {
+                height: 100vh;
+            }
+
+
+            .title {
+                background-color: #B6B6B6;
+                width: fit-content;
+                height: fit-content;
+                padding-left: 20px;
+                padding-right: 20px;
+                font-family: 'Roboto Mono', monospace;
+                font-size: x-large;
+            }
+
+            .stats {
+                background-color: #B6B6B6;
+                padding-right: 20px;
+                font-family: 'Roboto Mono', monospace;
+                font-size: large;
+                width: fit-content;
+
+            }
+
+            #job::before {
+                background-image: url('Microsoft_logo.svg');
+                background-repeat: no-repeat;
+                background-size: 21.33px 16px;
+                display: inline-block;
+                width: 21.33;
+                height: 16px;
+                padding-right: 8px;
+                content: "";
+
+            }
+
+            #location::before {
+                background-image: url('Flag_Of_Canada.svg');
+                background-repeat: no-repeat;
+                background-size: 21.33px 16px;
+                display: inline-block;
+                width: 21.33;
+                height: 16px;
+                padding-right: 8px;
+                content: "";
+            }
+
+            #edu::before {
+                background-image: url('SFU-block-logo.svg');
+                background-repeat: no-repeat;
+                background-size: 21.33px 16px;
+                display: inline-block;
+                width: 21.33;
+                height: 16px;
+                padding-right: 8px;
+                content: "";
+
+            }
+
+            li {
+                list-style-type: none;
+            }
+
+            .resume {
+            }
+
+            .projects {
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="section splash">
+            <div class="splash_left">
+                <div class="title">
+                    <h1>Owen Campbell</h1>
+                </div>
+
+                <div class="stats">
+                    <ul>
+                        <li id="job">Software Engineer 2 at Microsoft</li>
+                        <li id="location">Vancouver, BC</li>
+                        <li id="edu">BSc in Computing Science from Simon Fraser University</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="splash_right">
+                <div class="nav">
+                    <span class="nav_item">about</span>
+                    <span class="nav_item">resume</span>
+                    <span class="nav_item">projects</span>
+                    <span class="nav_item">blog</span>
+                </div>
+            </div>
+        </div>
+        <div class="section resume">
+
+        </div>
+        <div class="section projects">
+
+        </div>
+
+        <div>asdfasdf</div>
+        <div>asdfasdf</div>
+        <div>asdfasdf</div>
+        <div>asdfasdf</div>
+        <div>asdfasdf</div>
+        <div>asdfasdf</div>
+    </body>
+</html>
