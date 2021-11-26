@@ -88,9 +88,8 @@
                 background-color: #B6B6B6;
                 width: fit-content;
                 height: fit-content;
-                padding-left: 20px;
-                padding-right: 20px;
-                margin-bottom: 20px;
+                margin:20px;
+                padding:20px;
                 font-family: 'Roboto Mono', monospace;
                 font-size: x-large;
                 max-width: 80%;
@@ -98,14 +97,20 @@
 
             .stats {
                 background-color: #B6B6B6;
-                padding-right: 20px;
                 font-family: 'Roboto Mono', monospace;
                 font-size: large;
-                padding:20px;
+                padding: 5%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
                 max-width: 80%;
+            }
+
+            @media only screen and (max-width: 500px) {
+                .stats {
+                    display: none;
+                }
+                
             }
 
             #job::before {
@@ -224,7 +229,7 @@
         <div class="section splash">
             <div class="splash_top">
                 <div class="title">
-                    <h1>Owen Campbell</h1>
+                    <h1 style="margin:0">Owen Campbell</h1>
                 </div>
 
                 <div class="stats">
