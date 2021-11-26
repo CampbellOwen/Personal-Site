@@ -21,27 +21,41 @@
                 color: #474747;
             }
 
+
+            a:visited {
+                color: unset;
+            }
+
+            a:link {
+                color: unset;
+            }
+
+            a:hover {
+                color: #181818;
+            }
+
             .splash {
-                background-image: url('bigger.png');
+                background-image: url('img/splash.png');
                 background-position: center;
                 background-size: cover;
                 display: flex;
-                flex-direction: row;
-                align-items: space-between;
-                justify-content:space-between;
+                flex-direction: column;
+                align-items: center;
+                justify-content:space-evenly;
                 color: #474747;
             }
 
-            .splash_left {
+            .splash_top {
                 display: flex;
                 flex-direction: column;
-                justify-content:space-evenly;
+                justify-content:space-between;
+                align-items: center;
                 color: #474747;
                 flex-shrink: 1.5;
 
             }
             
-            .splash_right {
+            .splash_bottom {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
@@ -49,22 +63,21 @@
             }
 
             .nav {
+                background-color: #B6B6B6;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 justify-content: space-around;
-                height: 40%;
             }
 
             .nav_item {
                 font-size: x-large;
-                background-color: #B6B6B6;
-                padding: 10px;
-                padding-left: 20px;
-                padding-right: 20px;
+                padding: 20px;
+                padding-left: 30px;
+                padding-right: 30px;
             }
 
             .section {
-                height: 100vh;
+                min-height: 100vh;
             }
 
 
@@ -74,6 +87,7 @@
                 height: fit-content;
                 padding-left: 20px;
                 padding-right: 20px;
+                margin-bottom: 20px;
                 font-family: 'Roboto Mono', monospace;
                 font-size: x-large;
             }
@@ -83,12 +97,14 @@
                 padding-right: 20px;
                 font-family: 'Roboto Mono', monospace;
                 font-size: large;
-                width: fit-content;
-
+                padding:20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
             }
 
             #job::before {
-                background-image: url('Microsoft_logo.svg');
+                background-image: url('img/Microsoft_logo.svg');
                 background-repeat: no-repeat;
                 background-size: 21.33px 16px;
                 display: inline-block;
@@ -100,7 +116,7 @@
             }
 
             #location::before {
-                background-image: url('Flag_Of_Canada.svg');
+                background-image: url('img/Flag_Of_Canada.svg');
                 background-repeat: no-repeat;
                 background-size: 21.33px 16px;
                 display: inline-block;
@@ -111,7 +127,7 @@
             }
 
             #edu::before {
-                background-image: url('SFU-block-logo.svg');
+                background-image: url('img/SFU-block-logo.svg');
                 background-repeat: no-repeat;
                 background-size: 21.33px 16px;
                 display: inline-block;
@@ -122,54 +138,161 @@
 
             }
 
-            li {
-                list-style-type: none;
+
+            .experience {
+                display: grid;
+                padding: 30px;
+                grid-template-areas: 
+                    "education"
+                    "work_experience"
+                    "internships"
+                    "technologies";
             }
 
-            .resume {
+            @media (min-width: 768px) {
+                .experience {
+                    padding-left: 10%;
+                    padding-right: 10%;
+                    grid-template-areas: 
+                        "education internships"
+                        "work_experience technologies";
+                }
+            }
+            
+            .resume_item {
+                justify-self:flex-start;
             }
 
-            .projects {
+            .title-wrapper {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 0;
+                margin: 0;
             }
 
+            .timeframe {
+                padding-left: 30px;
+            }
+
+            h3, h4 {
+                margin: 0.5rem;
+            }
         </style>
     </head>
     <body>
         <div class="section splash">
-            <div class="splash_left">
+            <div class="splash_top">
                 <div class="title">
                     <h1>Owen Campbell</h1>
                 </div>
 
                 <div class="stats">
-                    <ul>
-                        <li id="job">Software Engineer 2 at Microsoft</li>
-                        <li id="location">Vancouver, BC</li>
-                        <li id="edu">BSc in Computing Science from Simon Fraser University</li>
-                    </ul>
+                        <span id="job">Software Engineer 2 at Microsoft</span>
+                        <span id="location">Vancouver, BC</span>
+                        <span id="edu">BSc in Computing Science from Simon Fraser University</span>
                 </div>
             </div>
-            <div class="splash_right">
+            <div class="splash_bottom">
                 <div class="nav">
-                    <span class="nav_item">about</span>
-                    <span class="nav_item">resume</span>
-                    <span class="nav_item">projects</span>
-                    <span class="nav_item">blog</span>
+                    <a class="nav_item" href="#experience">experience</a>
+                    <a class="nav_item" href="#projects">projects</a>
+                    <a class="nav_item" href="#contact">contact</a>
                 </div>
             </div>
         </div>
-        <div class="section resume">
+
+        <div class="section experience" id="experience">
+            <div class="resume_item">
+                <h2>Education</h2>
+                <div class="title-wrapper">
+                    <h3>Simon Fraser University</h3>
+                    <span class="timeframe">(2013-2019)</span>
+                </div>
+                <ul>
+                    <li>Computing Science</li>
+                    <li>3.83 GPA</li>
+                </ul>
+
+                <div class="title-wrapper">
+                    <h3>Zhejiang University（浙江大学）</h3>
+                    <span class="timeframe">(2014-2015)</span>
+                </div>
+                    <ul>
+                        <li>
+                            Three semesters studying Computer Science and Mandarin Chinese in Hangzhou, China
+                        </li>
+                    </ul>
+            </div>
+            <div class="resume_item">
+                <h2>Work Experience</h2>
+                <div class="title-wrapper">
+                    <h3>Microsoft</h3>
+                    <span class="timeframe">(2019-Present)</span>
+                </div>
+                <ul>
+                    <li>Software Engineer 2</li>
+                    <li>Collaborate with multiple teams across Microsoft as a shared platform team.</li>
+                    <li>Work extensively with C++, Typescript, React, and React Native</li>
+                </ul>
+            </div>
+            <div class="resume_item">
+                <h2>Internships</h2>
+                <h3 >Microsoft</h3>
+                <div class="title-wrapper">
+                    <h4 >Microsoft Garage, Vancouver BC</h4>
+                    <span class="timeframe">(Spring 2017)</span>
+                </div>
+                <ul>
+                    <li>Worked in a team of 6 to design, implement, and test an MSN News video application for the Xbox One Platform using UWP C#</li>
+                    <li>Worked with the Agile methodology with complete ownership over our project with oversight and guidance from a Microsoft sponsor team</li>
+                    <li>Published in the Xbox One Store</li>
+                    <li><a href="https://www.microsoft.com/en-us/garage/profiles/your-news/">Your News</a></li>
+                </ul>
+
+                <div class="title-wrapper">
+                    <h4 >PowerPoint, Mountain View, CA</h4>
+                    <span class="timeframe">(Summer 2017)</span>
+                </div>
+                <ul>
+                    <li>Investigated and implement improvements to the PowerPoint Designer service</li>
+                    <li>C++ and C#</li>
+                </ul>
+
+                <div class="title-wrapper">
+                    <h4>Office CXE, Redmond WA</h4>
+                    <span class="timeframe">(Summer 2018)</span>
+                </div>
+                <ul>
+                    <li>Worked alongside designers and PMs to design and implement a frontend feature shared across Microsoft Office applications on Windows</li>
+                    <li>C++</li>
+                </ul>
+            </div>
+            <div class="resume_item">
+                <h2>Technologies</h2>
+                <h3>Professional Experience</h3>
+                <ul>
+                    <li>C++</li>
+                    <li>C#</li>
+                    <li>Typescript</li>
+                    <li>React</li>
+                    <li>React Native</li>
+                </ul>
+                <h3>Personal Interest</h3>
+                <ul>
+                    <li>Rust</li>
+                    <li>Haskell</li>
+                    <li>DirectX</li>
+                    <li>Vulkan</li>
+                </ul>
+            </div>
 
         </div>
-        <div class="section projects">
+        <div class="section" id="projects">
 
         </div>
+        <div class="section" id="contact">
 
-        <div>asdfasdf</div>
-        <div>asdfasdf</div>
-        <div>asdfasdf</div>
-        <div>asdfasdf</div>
-        <div>asdfasdf</div>
-        <div>asdfasdf</div>
+        </div>
     </body>
 </html>
