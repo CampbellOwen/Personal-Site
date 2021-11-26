@@ -106,11 +106,20 @@
                 max-width: 80%;
             }
 
-            @media only screen and (max-width: 500px) {
-                .stats {
-                    display: none;
+            @media only screen and (max-width: 400px) {
+                .title  h1 {
+                    font-size: 1.8rem;
                 }
-                
+
+                .nav_item {
+                    font-size: 1.0rem;
+                    padding: 10px;
+                }
+
+                .stats {
+                    font-size: 1.1rem;
+                }
+
             }
 
             #job::before {
@@ -172,6 +181,7 @@
             @media only screen and (max-width: 768px) {
                 .nav {
                     flex-direction: column;
+                    align-items: center;
                 }
             }
             
@@ -223,6 +233,10 @@
                 justify-items: center;
             }
 
+            .stat-item {
+                padding-top:10px;
+            }
+
         </style>
     </head>
     <body>
@@ -233,9 +247,9 @@
                 </div>
 
                 <div class="stats">
-                        <span id="job">Software Engineer 2 at Microsoft</span>
-                        <span id="location">Vancouver, BC</span>
-                        <span id="edu">BSc in Computing Science from Simon Fraser University</span>
+                        <span class="stat-item" id="location">Vancouver, BC</span>
+                        <span class="stat-item" id="job">Software Engineer 2, Microsoft</span>
+                        <span class="stat-item" id="edu">BSc in Computing Science, Simon Fraser University</span>
                 </div>
             </div>
             <div class="splash_bottom">
