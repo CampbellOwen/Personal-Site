@@ -70,6 +70,7 @@
                 justify-content: space-around;
             }
 
+
             .nav_item {
                 font-size: x-large;
                 padding: 20px;
@@ -157,6 +158,12 @@
                     grid-template-areas: 
                         "education internships"
                         "work_experience technologies";
+                }
+            }
+
+            @media only screen and (max-width: 768px) {
+                .nav {
+                    flex-direction: column;
                 }
             }
             
