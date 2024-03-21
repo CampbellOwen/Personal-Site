@@ -6,6 +6,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
         <style>
+            :root {
+                --light-colour: #B7B7B7;
+                --dark-colour: #474747;
+            }
+
             body {
                 margin: 0;
                 font-family: 'Roboto Mono', monospace;
@@ -13,13 +18,13 @@
             }
 
             body > :nth-child(odd) {
-                background-color: #474747;
-                color: #B6B6B6;
+                background-color: var(--dark-colour);
+                color: var(--light-colour);
             }
             
             body > :nth-child(even) {
-                background-color: #B6B6B6;
-                color: #474747;
+                background-color: var(--light-colour);
+                color: var(--dark-colour);
             }
 
 
@@ -44,7 +49,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content:space-evenly;
-                color: #474747;
+                color: var(--dark-colour);
             }
 
             .splash_top {
@@ -52,7 +57,7 @@
                 flex-direction: column;
                 justify-content:space-between;
                 align-items: center;
-                color: #474747;
+                color: var(--dark-colour);
                 flex-shrink: 1.5;
 
             }
@@ -61,11 +66,11 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
-                color: #474747;
+                color: var(--dark-colour);
             }
 
             .nav {
-                background-color: #B6B6B6;
+                background-color: var(--light-colour);
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
@@ -85,7 +90,7 @@
 
 
             .title {
-                background-color: #B6B6B6;
+                background-color: var(--light-colour);
                 width: fit-content;
                 height: fit-content;
                 margin:20px;
@@ -96,7 +101,7 @@
             }
 
             .stats {
-                background-color: #B6B6B6;
+                background-color: var(--light-colour);
                 font-family: 'Roboto Mono', monospace;
                 font-size: large;
                 padding: 5%;
@@ -222,8 +227,8 @@
                 flex-direction: column;
                 padding: 5%;
                 justify-self: center;
-                background-color: #B6B6B6;
-                color:#474747;
+                background-color: var(--light-colour);
+                color:var(--dark-colour);
                 width:70%;
                 margin: 30px
             }
