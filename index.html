@@ -14,11 +14,11 @@
 
             body > :nth-child(odd) {
                 background-color: #474747;
-                color: #B6B6B6;
+                color: #B7B7B7;
             }
             
             body > :nth-child(even) {
-                background-color: #B6B6B6;
+                background-color: #B7B7B7;
                 color: #474747;
             }
 
@@ -35,16 +35,35 @@
                 color: #181818;
             }
 
+            @keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1;}
+            }
+
             .splash {
+                height: 100vh;
+                position: absolute;
+                width: 100%;
                 background-image: url('img/splash.png');
                 image-rendering: pixelated;
                 background-position: center;
                 background-size: cover;
+                animation: fadeIn 2s;
+                z-index: 10;
+            }
+
+            .splash_section {
+                background-color: transparent !important;
+                position: relative;
+                height: 100vh;
+                z-index: 10;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content:space-evenly;
+                justify-content: space-evenly;
                 color: #474747;
+
+
             }
 
             .splash_top {
@@ -65,7 +84,7 @@
             }
 
             .nav {
-                background-color: #B6B6B6;
+                background-color: #B7B7B7;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
@@ -85,7 +104,7 @@
 
 
             .title {
-                background-color: #B6B6B6;
+                background-color: #B7B7B7;
                 width: fit-content;
                 height: fit-content;
                 margin:20px;
@@ -96,7 +115,7 @@
             }
 
             .stats {
-                background-color: #B6B6B6;
+                background-color: #B7B7B7;
                 font-family: 'Roboto Mono', monospace;
                 font-size: large;
                 padding: 5%;
@@ -222,7 +241,7 @@
                 flex-direction: column;
                 padding: 5%;
                 justify-self: center;
-                background-color: #B6B6B6;
+                background-color: #B7B7B7;
                 color:#474747;
                 width:70%;
                 margin: 30px
@@ -240,7 +259,8 @@
         </style>
     </head>
     <body>
-        <div class="section splash">
+        <div class="splash" ></div>
+        <div class="splash_section">
             <div class="splash_top">
                 <div class="title">
                     <h1 style="margin:0">Owen Campbell</h1>
