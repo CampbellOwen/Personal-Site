@@ -6,6 +6,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
         <style>
+            @font-face {
+                font-family: 'Berkeley Mono';
+                font-weight: normal;
+                font-style: normal;
+                src: url("fonts/BerkeleyMono-Regular.woff2") format('woff2'),
+                     url("fonts/BerkeleyMono-Regular.woff") format('woff');
+            }
+
             :root {
                 --light-colour: #B7B7B7;
                 --dark-colour: #474747;
@@ -13,7 +21,7 @@
 
             body {
                 margin: 0;
-                font-family: 'Roboto Mono', monospace;
+                font-family: 'Berkeley Mono', 'Roboto Mono', monospace;
                 font-size: large;
             }
 
@@ -38,6 +46,12 @@
 
             a:hover {
                 color: #181818;
+            }
+
+            .thick-border {
+                border-style: solid;
+                border-width: 3px;
+                border-color: var(--dark-colour);
             }
 
             .splash {
@@ -93,21 +107,20 @@
                 background-color: var(--light-colour);
                 width: fit-content;
                 height: fit-content;
-                margin:20px;
-                padding:20px;
-                font-family: 'Roboto Mono', monospace;
+                margin: 32px;
+                padding: 32px;
                 font-size: x-large;
                 max-width: 80%;
             }
 
             .stats {
                 background-color: var(--light-colour);
-                font-family: 'Roboto Mono', monospace;
                 font-size: large;
                 padding: 5%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
+                gap: 12px;
                 max-width: 80%;
             }
 
@@ -118,7 +131,6 @@
 
                 .nav_item {
                     font-size: 1.0rem;
-                    padding: 10px;
                 }
 
                 .stats {
@@ -238,27 +250,23 @@
                 justify-items: center;
             }
 
-            .stat-item {
-                padding-top:10px;
-            }
-
         </style>
     </head>
     <body>
         <div class="section splash">
             <div class="splash_top">
-                <div class="title">
+                <div class="title thick-border">
                     <h1 style="margin:0">Owen Campbell</h1>
                 </div>
 
-                <div class="stats">
+                <div class="stats thick-border">
                         <span class="stat-item" id="location">Vancouver, BC</span>
                         <span class="stat-item" id="job">Software Engineer 2, Microsoft</span>
                         <span class="stat-item" id="edu">BSc in Computing Science, Simon Fraser University</span>
                 </div>
             </div>
             <div class="splash_bottom">
-                <div class="nav">
+                <div class="nav thick-border">
                     <a class="nav_item" href="#experience">experience</a>
                     <a class="nav_item" href="#projects">projects</a>
                     <a class="nav_item" href="mailto:ocampbell95@gmail.com">contact</a>
