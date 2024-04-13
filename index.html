@@ -124,7 +124,7 @@
                 max-width: 80%;
             }
 
-            @media only screen and (max-width: 400px) {
+            @media only screen and (max-width: 508px) {
                 .title  h1 {
                     font-size: 1.8rem;
                 }
@@ -225,7 +225,15 @@
 
             .projects {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
+
+
+            }
+
+            @media only screen and (max-width: 1440px) {
+                .projects {
+                    grid-template-columns: 1fr 1fr;
+                }
             }
 
             @media only screen and (max-width: 768px) {
@@ -242,12 +250,21 @@
                 background-color: var(--light-colour);
                 color:var(--dark-colour);
                 width:70%;
-                margin: 30px
+                margin: 32px
             }
 
             .project-image {
                 display: flex;
                 justify-items: center;
+                width:100%;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                object-position: 50% 50%;
+            }
+
+            .section-title {
+                margin: 0;
+                padding: 32px;
             }
 
         </style>
@@ -267,16 +284,86 @@
             </div>
             <div class="splash_bottom">
                 <div class="nav thick-border">
-                    <a class="nav_item" href="#experience">experience</a>
                     <a class="nav_item" href="#projects">projects</a>
-                    <a class="nav_item" href="mailto:ocampbell95@gmail.com">contact</a>
+                    <a class="nav_item" href="#experience">experience</a>
+                    <a class="nav_item" href="mailto:contact@owencampbell.ca">contact</a>
                 </div>
             </div>
         </div>
 
 
+        <div class="section" id="projects">
+            <h1 class="section-title">Projects</h1>
+            <div class="projects">
+                <div class="project-card thick-border">
+                    <img class="project-image" width="100%" src="img/projects/NowPlaying2.jpg" />
+                    <h2><a href="https://github.com/CampbellOwen/NowPlaying" target="_blank" rel="noopener">NowPlaying</a></h2>
+                    <div class="project-description">
+                        A raspberry pi powered e-ink display showing your current playing song on Spotify.
+                    </div>
+                </div>
+
+                <div class="project-card thick-border">
+                    <img class="project-image" width="100%" src="img/projects/contour.jfif" />
+                    <h2><a href="https://github.com/CampbellOwen/Contours" target="_blank" rel="noopener">Contours</a></h2>
+                    <div class="project-description">
+                        Marching squares on real-world height map data. Written in Python.
+                    </div>
+                </div>
+
+                <div class="project-card thick-border">
+                    <img class="project-image" width="100%" src="img/projects/cellularautomata.svg" />
+                    <h2><a href="https://openprocessing.org/sketch/1974840" target="_blank" rel="noopener">Cellular Automata</a></h2>
+                    <div class="project-description">
+                        3 state 1 dimensional cellular automata
+                    </div>
+                </div>
+
+                <div class="project-card thick-border">
+                    <img class="project-image" width="100%" src="img/projects/RayTracingInOneWeekend.png" />
+                    <h2><a href="https://github.com/CampbellOwen/RayTracingInOneWeekend" target="_blank" rel="noopener">Ray Tracing in One Weekend</a></h2>
+                    <div class="project-description">
+                        An implementation of part 1 and 2 of Peter Shirley's <a href="https://raytracing.github.io" target="_blank" rel="noopener">Ray Tracing in One Weekend Series</a>. Written in Rust and over time shifting to a more PBRT style pathtracer.
+                    </div>
+                </div>
+
+                <div class="project-card thick-border">
+                    <img class="project-image" width="100%" src="img/projects/directx11.png" />
+                    <h2><a href="https://github.com/CampbellOwen/LearningDirectx" target="_blank" rel="noopener">DirectX11 Renderer</a></h2>
+                    <div class="project-description">
+                        A simple renderer used to become familiar with DirectX 11. Simple viewport controls, phong lighting, and skybox support. 
+                    </div>
+                </div>
+
+                <div class="project-card thick-border">
+                    <img class="project-image" width="100%" src="img/projects/linedrawer.jpg" />
+                    <h2><a href="https://github.com/CampbellOwen/LineDrawer" target="_blank" rel="noopener">LineDrawer</a></h2>
+                    <div class="project-description">
+                        Estimates a provided image by randomly drawing lines, resulting in a sketchy hand-drawn look. Written in Python.
+                    </div>
+                </div>
+
+                <div class="project-card thick-border">
+                    <img class="project-image" width="100%" src="img/projects/gameboy.jpg" />
+                    <h2><a href="https://github.com/CampbellOwen/GameBoyEmulatorCoroutines" target="_blank" rel="noopener">Coroutines based GameBoy Emulator</a></h2>
+                    <div class="project-description">
+                        A barebones GameBoy emulator written with preview C++20 coroutines as an experiment. The coroutines simulate individual clock ticks of the GameBoy's CPU. Accurate, but slow. Only implemented enough instructions to run the bootloader.
+                    </div>
+                </div>
+
+                <div class="project-card thick-border">
+                    <img class="project-image" width="100%" src="img/projects/pixelsorting.png" />
+                    <h2><a href="https://github.com/CampbellOwen/PixelSorting" target="_blank" rel="noopener">Pixel Sorting</a></h2>
+                    <div class="project-description">
+                        Experimenting with pixel sorting by colour, written in C++.
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
         <div class="section" id="experience">
-            <h1 style="margin: 0; padding-left:30px; padding-top:30px">About</h1>
+            <h1 class="section-title">About</h1>
             <div class="experience">
                 <div class="resume_item">
                     <h2>Education</h2>
@@ -362,82 +449,6 @@
                         <li>Python</li>
                     </ul>
                 </div>
-            </div>
-        </div>
-        <div class="section" id="projects">
-            <h1 style="margin: 0; padding:30px">Projects</h1>
-            <div class="projects">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img width="100%" src="img/projects/NowPlaying.jpg" />
-                    </div>
-                    <h2><a href="https://github.com/CampbellOwen/NowPlaying" target="_blank" rel="noopener">NowPlaying</a></h2>
-                    <div class="project-description">
-                        A raspberry pi powered e-ink display showing your current playing song on Spotify.
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img width="100%" src="img/projects/contour.jfif" />
-                    </div>
-                    <h2><a href="https://github.com/CampbellOwen/Contours" target="_blank" rel="noopener">Contours</a></h2>
-                    <div class="project-description">
-                        Marching squares on real-world height map data. Written in Python.
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img width="100%" src="img/projects/RayTracingInOneWeekend.png" />
-                    </div>
-                    <h2><a href="https://github.com/CampbellOwen/RayTracingInOneWeekend" target="_blank" rel="noopener">Ray Tracing in One Weekend</a></h2>
-                    <div class="project-description">
-                        An implementation of part 1 and 2 of Peter Shirley's <a href="https://raytracing.github.io" target="_blank" rel="noopener">Ray Tracing in One Weekend Series</a>. Written in Rust and over time shifting to a more PBRT style pathtracer.
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img width="100%" src="img/projects/directx11.png" />
-                    </div>
-                    <h2><a href="https://github.com/CampbellOwen/LearningDirectx" target="_blank" rel="noopener">DirectX11 Renderer</a></h2>
-                    <div class="project-description">
-                        A simple renderer used to become familiar with DirectX 11. Simple viewport controls, phong lighting, and skybox support. 
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img width="100%" src="img/projects/linedrawer.jpg" />
-                    </div>
-                    <h2><a href="https://github.com/CampbellOwen/LineDrawer" target="_blank" rel="noopener">LineDrawer</a></h2>
-                    <div class="project-description">
-                        Estimates a provided image by randomly drawing lines, resulting in a sketchy hand-drawn look. Written in Python.
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img width="100%" src="img/projects/gameboy.jpg" />
-                    </div>
-                    <h2><a href="https://github.com/CampbellOwen/GameBoyEmulatorCoroutines" target="_blank" rel="noopener">Coroutines based GameBoy Emulator</a></h2>
-                    <div class="project-description">
-                        A barebones GameBoy emulator written with preview C++20 coroutines as an experiment. The coroutines simulate individual clock ticks of the GameBoy's CPU. Accurate, but slow. Only implemented enough instructions to run the bootloader.
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img width="100%" src="img/projects/pixelsorting.png" />
-                    </div>
-                    <h2><a href="https://github.com/CampbellOwen/PixelSorting" target="_blank" rel="noopener">Pixel Sorting</a></h2>
-                    <div class="project-description">
-                        Experimenting with pixel sorting by colour, written in C++.
-                    </div>
-                </div>
-
-
             </div>
         </div>
     </body>
