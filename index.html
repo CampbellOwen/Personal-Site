@@ -25,12 +25,12 @@
                 font-size: large;
             }
 
-            body > :nth-child(odd) {
+            main > :nth-child(odd) {
                 background-color: var(--dark-colour);
                 color: var(--light-colour);
             }
-            
-            body > :nth-child(even) {
+
+            main > :nth-child(even) {
                 background-color: var(--light-colour);
                 color: var(--dark-colour);
             }
@@ -55,7 +55,7 @@
             }
 
             .splash {
-                background-image: url('img/splash.png');
+                background-image: url('img/splash.avif');
                 image-rendering: pixelated;
                 background-position: center;
                 background-size: cover;
@@ -75,7 +75,7 @@
                 flex-shrink: 1.5;
 
             }
-            
+
             .splash_bottom {
                 display: flex;
                 flex-direction: column;
@@ -178,7 +178,7 @@
             .experience {
                 display: grid;
                 padding: 30px;
-                grid-template-areas: 
+                grid-template-areas:
                     "education"
                     "work_experience"
                     "internships"
@@ -189,7 +189,7 @@
                 .experience {
                     padding-left: 10%;
                     padding-right: 10%;
-                    grid-template-areas: 
+                    grid-template-areas:
                         "education internships"
                         "work_experience technologies";
                 }
@@ -201,7 +201,7 @@
                     align-items: center;
                 }
             }
-            
+
             .resume_item {
                 justify-self:flex-start;
             }
@@ -262,6 +262,12 @@
                 object-position: 50% 50%;
             }
 
+            .project-description {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+
             .section-title {
                 margin: 0;
                 padding: 32px;
@@ -270,33 +276,43 @@
         </style>
     </head>
     <body>
-        <div class="section splash">
-            <div class="splash_top">
-                <div class="title thick-border">
-                    <h1 style="margin:0">Owen Campbell</h1>
-                </div>
+        <main>
+            <section class="section splash">
+                <div class="splash_top">
+                    <div class="title thick-border">
+                        <h1 style="margin:0">Owen Campbell</h1>
+                    </div>
 
-                <div class="stats thick-border">
-                        <span class="stat-item" id="location">Vancouver, BC</span>
-                        <span class="stat-item" id="job">Software Engineer 2, Microsoft</span>
-                        <span class="stat-item" id="edu">BSc in Computing Science, Simon Fraser University</span>
+                    <div class="stats thick-border">
+                            <span class="stat-item" id="location">Vancouver, BC</span>
+                            <span class="stat-item" id="job">Senior Software Engineer, Microsoft</span>
+                            <span class="stat-item" id="edu">BSc in Computing Science, Simon Fraser University</span>
+                    </div>
                 </div>
-            </div>
-            <div class="splash_bottom">
-                <div class="nav thick-border">
-                    <a class="nav_item" href="#projects">projects</a>
-                    <a class="nav_item" href="#experience">experience</a>
-                    <a class="nav_item" href="mailto:contact@owencampbell.ca">contact</a>
+                <div class="splash_bottom">
+                    <div class="nav thick-border">
+                        <a class="nav_item" href="#projects">projects</a>
+                        <a class="nav_item" href="https://grain.social/profile/owencampbell.ca" target="_blank" rel="noopener">photos</a>
+                        <a class="nav_item" href="mailto:contact@owencampbell.ca">contact</a>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
 
-        <div class="section" id="projects">
+        <section class="section" id="projects">
             <h1 class="section-title">Projects</h1>
             <div class="projects">
                 <div class="project-card thick-border">
-                    <img class="project-image" width="100%" src="img/projects/NowPlaying2.jpg" />
+                    <img class="project-image" width="100%" src="img/projects/nowlistening.avif" alt="Collage of various album covers"/>
+                    <h2><a href="https://nowlistening.owencampbell.ca" target="_blank" rel="noopener">NowListening</a></h2>
+                    <div class="project-description">
+                        <span>Now Listening monitors the AT Protocol Jetstream for <a href="https://teal.fm" target="_blank" rel="noopener">teal.fm</a> records and creates continuously updating collages of the most listened to albums of the last hour.</span>
+                        <a href="https://tangled.org/owencampbell.ca/now-listening" target="_blank" rel="noopener">source code</a>
+                    </div>
+                </div>
+
+                <div class="project-card thick-border">
+                    <img class="project-image" width="100%" src="img/projects/NowPlaying2.avif" alt="Picture of NowPlaying project on e-ink screen" />
                     <h2><a href="https://github.com/CampbellOwen/NowPlaying" target="_blank" rel="noopener">NowPlaying</a></h2>
                     <div class="project-description">
                         A raspberry pi powered e-ink display showing your current playing song on Spotify.
@@ -304,7 +320,16 @@
                 </div>
 
                 <div class="project-card thick-border">
-                    <img class="project-image" width="100%" src="img/projects/contour.jfif" />
+                    <img class="project-image" width="100%" src="img/projects/atscrobble.avif" alt="Screenshot of the atscrobble webpage"/>
+                    <h2><a href="https://atscrobble.owencampbell.ca" target="_blank" rel="noopener">AtScrobble</a></h2>
+                    <div class="project-description">
+                        <span>A service that translates Plex webhook events into AT Protocol <a href="https://teal.fm" target="_blank" rel="noopener">teal.fm</a> records.</span>
+                        <a href="https://tangled.org/owencampbell.ca/AtScrobble" target="_blank" rel="noopener">source code</a>
+                    </div>
+                </div>
+
+                <div class="project-card thick-border">
+                    <img class="project-image" width="100%" src="img/projects/contour.avif" alt="Stylized map of Salt Spring Island with height contours" />
                     <h2><a href="https://github.com/CampbellOwen/Contours" target="_blank" rel="noopener">Contours</a></h2>
                     <div class="project-description">
                         Marching squares on real-world height map data. Written in Python.
@@ -312,7 +337,7 @@
                 </div>
 
                 <div class="project-card thick-border">
-                    <img class="project-image" width="100%" src="img/projects/cellularautomata.svg" />
+                    <img class="project-image" width="100%" src="img/projects/cellularautomata.svg" alt="Artistic design generated with cellular automata" />
                     <h2><a href="https://openprocessing.org/sketch/1974840" target="_blank" rel="noopener">Cellular Automata</a></h2>
                     <div class="project-description">
                         3 state 1 dimensional cellular automata
@@ -320,23 +345,23 @@
                 </div>
 
                 <div class="project-card thick-border">
-                    <img class="project-image" width="100%" src="img/projects/RayTracingInOneWeekend.png" />
-                    <h2><a href="https://github.com/CampbellOwen/RayTracingInOneWeekend" target="_blank" rel="noopener">Ray Tracing in One Weekend</a></h2>
+                    <img class="project-image" width="100%" src="img/projects/RayTracingInOneWeekend.avif" alt="Picture of raytracing renderer output" />
+                    <h2><a href="https://github.com/CampbellOwen/RayTracingInOneWeekend" target="_blank" rel="noopener">Rust Raytracing Renderer</a></h2>
                     <div class="project-description">
-                        An implementation of part 1 and 2 of Peter Shirley's <a href="https://raytracing.github.io" target="_blank" rel="noopener">Ray Tracing in One Weekend Series</a>. Written in Rust and over time shifting to a more PBRT style pathtracer.
+                        An implementation and extension of part 1 and 2 of Peter Shirley's <a href="https://raytracing.github.io" target="_blank" rel="noopener">Ray Tracing in One Weekend Series</a>. Written in Rust and over time shifting to a more PBRT style pathtracer.
                     </div>
                 </div>
 
                 <div class="project-card thick-border">
-                    <img class="project-image" width="100%" src="img/projects/directx11.png" />
+                    <img class="project-image" width="100%" src="img/projects/directx11.avif" alt="Picture of a rendered scene" />
                     <h2><a href="https://github.com/CampbellOwen/LearningDirectx" target="_blank" rel="noopener">DirectX11 Renderer</a></h2>
                     <div class="project-description">
-                        A simple renderer used to become familiar with DirectX 11. Simple viewport controls, phong lighting, and skybox support. 
+                        A simple renderer used to become familiar with DirectX 11. Simple viewport controls, phong lighting, and skybox support.
                     </div>
                 </div>
 
                 <div class="project-card thick-border">
-                    <img class="project-image" width="100%" src="img/projects/linedrawer.jpg" />
+                    <img class="project-image" width="100%" src="img/projects/linedrawer.avif" alt="Artistic design of a ferret from thousands of lines"/>
                     <h2><a href="https://github.com/CampbellOwen/LineDrawer" target="_blank" rel="noopener">LineDrawer</a></h2>
                     <div class="project-description">
                         Estimates a provided image by randomly drawing lines, resulting in a sketchy hand-drawn look. Written in Python.
@@ -344,7 +369,7 @@
                 </div>
 
                 <div class="project-card thick-border">
-                    <img class="project-image" width="100%" src="img/projects/gameboy.jpg" />
+                    <img class="project-image" width="100%" src="img/projects/gameboy.avif" alt="Picture of GameBoy boot screen rendered by the emulator"/>
                     <h2><a href="https://github.com/CampbellOwen/GameBoyEmulatorCoroutines" target="_blank" rel="noopener">Coroutines based GameBoy Emulator</a></h2>
                     <div class="project-description">
                         A barebones GameBoy emulator written with preview C++20 coroutines as an experiment. The coroutines simulate individual clock ticks of the GameBoy's CPU. Accurate, but slow. Only implemented enough instructions to run the bootloader.
@@ -352,104 +377,14 @@
                 </div>
 
                 <div class="project-card thick-border">
-                    <img class="project-image" width="100%" src="img/projects/pixelsorting.png" />
+                    <img class="project-image" width="100%" src="img/projects/pixelsorting.avif" alt="Artistic design of a picture with the pixels sorted horizontally by colour" />
                     <h2><a href="https://github.com/CampbellOwen/PixelSorting" target="_blank" rel="noopener">Pixel Sorting</a></h2>
                     <div class="project-description">
                         Experimenting with pixel sorting by colour, written in C++.
                     </div>
                 </div>
-
-
             </div>
-        </div>
-        <div class="section" id="experience">
-            <h1 class="section-title">About</h1>
-            <div class="experience">
-                <div class="resume_item">
-                    <h2>Education</h2>
-                    <div class="title-wrapper">
-                        <h3>Simon Fraser University</h3>
-                        <span class="timeframe">(2013-2019)</span>
-                    </div>
-                    <ul>
-                        <li>Computing Science</li>
-                        <li>3.83 GPA</li>
-                    </ul>
-
-                    <div class="title-wrapper">
-                        <h3>Zhejiang University（浙江大学）</h3>
-                        <span class="timeframe">(2014-2015)</span>
-                    </div>
-                        <ul>
-                            <li>
-                                Three semesters studying Computer Science and Mandarin Chinese in Hangzhou, China
-                            </li>
-                        </ul>
-                </div>
-                <div class="resume_item">
-                    <h2>Work Experience</h2>
-                    <div class="title-wrapper">
-                        <h3>Microsoft</h3>
-                        <span class="timeframe">(2019-Present)</span>
-                    </div>
-                    <ul>
-                        <li>Software Engineer 2</li>
-                        <li>Collaborate with multiple teams across Microsoft as a shared platform team.</li>
-                        <li>Work extensively with C++, Typescript, React, and React Native</li>
-                    </ul>
-                </div>
-                <div class="resume_item">
-                    <h2>Internships</h2>
-                    <h3 >Microsoft</h3>
-                    <div class="title-wrapper">
-                        <h4 >Microsoft Garage, Vancouver BC</h4>
-                        <span class="timeframe">(Spring 2017)</span>
-                    </div>
-                    <ul>
-                        <li>Worked in a team of 6 to design, implement, and test an MSN News video application for the Xbox One Platform using UWP C#</li>
-                        <li>Worked with the Agile methodology with complete ownership over our project with oversight and guidance from a Microsoft sponsor team</li>
-                        <li>Published in the Xbox One Store: <a href="https://www.microsoft.com/en-us/garage/profiles/your-news/">Your News</a></li>
-                        <li>C#, UWP</li>
-                    </ul>
-
-                    <div class="title-wrapper">
-                        <h4 >PowerPoint, Mountain View, CA</h4>
-                        <span class="timeframe">(Summer 2017)</span>
-                    </div>
-                    <ul>
-                        <li>Investigated and implemented improvements to the PowerPoint Designer service</li>
-                        <li>C++ and C#</li>
-                    </ul>
-
-                    <div class="title-wrapper">
-                        <h4>Office CXE, Redmond WA</h4>
-                        <span class="timeframe">(Summer 2018)</span>
-                    </div>
-                    <ul>
-                        <li>Worked alongside designers and PMs to design and implement a frontend feature shared across Microsoft Office applications on Windows</li>
-                        <li>C++</li>
-                    </ul>
-                </div>
-                <div class="resume_item">
-                    <h2>Technologies</h2>
-                    <h3>Professional Experience</h3>
-                    <ul>
-                        <li>C++</li>
-                        <li>C#</li>
-                        <li>Typescript</li>
-                        <li>React</li>
-                        <li>React Native</li>
-                    </ul>
-                    <h3>Personal Interest</h3>
-                    <ul>
-                        <li>Rust</li>
-                        <li>Haskell</li>
-                        <li>DirectX</li>
-                        <li>Vulkan</li>
-                        <li>Python</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        </section>
+        </main>
     </body>
 </html>
